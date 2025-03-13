@@ -1,0 +1,33 @@
+model User {
+  user_id         Int            
+  role            UserRole       
+  name            String         
+  surname         String         
+  email           String         
+  phone           String?        
+  address        String?         
+  gender          String?        
+  profile_image   String?        
+  member_since    DateTime       
+  status          String?        
+  items           Item[]
+  notifications   Notification[]
+}
+
+
+model Appointment {
+    user_id         Int          
+    start_date      Int
+    end_date        Int
+    status          String
+    medical_staff              
+}
+
+model Medic {
+    medic_id        Int
+    user_id         Int
+    speciality      String
+    email           String
+    phone           String
+    appointments    Appointment[]
+}
